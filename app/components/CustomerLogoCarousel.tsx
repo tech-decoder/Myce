@@ -3,16 +3,19 @@ const proofBlocks = [
     title: "Compliance-ready by design",
     description: "PCI-aligned workflows, tokenization, and access controls.",
     meta: "Security posture you can defend",
+    icon: "M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z", // badge-check - compliance/verified
   },
   {
     title: "Multi-processor resilience",
     description: "Route across providers with intelligent fallbacks.",
     meta: "No single point of failure",
+    icon: "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01", // server - multiple processors/infrastructure
   },
   {
     title: "Real-time observability",
     description: "Monitor approvals, retries, and recovery signals.",
     meta: "Know where revenue stalls",
+    icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z", // eye - observability/monitoring
   },
 ];
 
@@ -35,7 +38,7 @@ export default function CustomerLogoCarousel() {
               <div className="flex items-center justify-between mb-4">
                 <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
                   <svg className="w-5 h-5 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3l7 4v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={block.icon} />
                   </svg>
                 </div>
                 <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">

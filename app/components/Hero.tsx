@@ -7,34 +7,34 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl" />
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Content Container */}
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary-500" />
-            <span className="text-xs font-medium text-neutral-700 tracking-wide uppercase">
-              Revenue Orchestration Solutions
-            </span>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        {/* 2-Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Content */}
+          <div className="text-left">
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary-500" />
+              <span className="text-xs font-medium text-neutral-700 tracking-wide uppercase">
+                Revenue Orchestration Solutions
+              </span>
+            </div>
 
-          {/* Main Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-5 leading-[1.1] text-balance">
-            <span className="bg-gradient-to-r from-neutral-900 via-primary-600 to-neutral-900 bg-clip-text text-transparent">
-              Stop Losing Revenue to Payment Provider Lock-In
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-primary-600 mb-4 text-balance">
-            Enterprise payment orchestration, delivered in weeks—not months.
-          </p>
+            {/* Main Headline */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-5 leading-[1.1] text-neutral-900">
+              Stop Losing <span className="text-primary-600">Revenue</span> to Payment Provider <span className="text-primary-600">Lock-In</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-neutral-600 mb-4">
+              Enterprise payment orchestration, delivered in <span className="text-primary-600 font-semibold">weeks—not months</span>.
+            </p>
 
-          {/* Subheadline */}
-          <p className="text-base sm:text-lg text-neutral-600 mb-8 leading-relaxed max-w-3xl mx-auto text-balance">
-            We help finance teams implement multi-processor payment orchestration with intelligent routing, automatic recovery, and real-time analytics. All the benefits, none of the complexity.
-          </p>
+            {/* Subheadline */}
+            <p className="text-base sm:text-lg text-neutral-600 mb-8 leading-relaxed">
+              We help finance teams implement multi-processor payment orchestration with intelligent routing, automatic recovery, and real-time analytics. All the benefits, none of the complexity.
+            </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-start gap-4">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -55,8 +55,8 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Service Benefits */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            {/* Service Benefits */}
+            <div className="mt-8 flex flex-wrap items-start gap-3">
             {[
               {
                 label: "Live in 2 weeks",
@@ -87,15 +87,109 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Trust Badge */}
-          <div className="mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-50 border border-neutral-200">
-            <svg className="w-4 h-4 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-            <span className="text-xs font-medium text-neutral-600">Powered by enterprise-grade infrastructure</span>
+            {/* Trust Badge */}
+            <div className="mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-50 border border-neutral-200">
+              <svg className="w-4 h-4 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span className="text-xs font-medium text-neutral-600">Powered by enterprise-grade infrastructure</span>
+            </div>
+          </div>
+
+          {/* Right: Architecture Diagram */}
+          <div className="hidden lg:block">
+            <ArchitectureDiagramInline />
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+// Inline version for Hero - includes Myce logo
+function ArchitectureDiagramInline() {
+  return (
+    <div className="relative w-full">
+      {/* Diagram Container */}
+      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 p-6 lg:p-8 shadow-card">
+        {/* Myce Logo Badge */}
+        <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-primary-500 flex items-center gap-2">
+          <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center">
+            <div className="w-2 h-2 rounded-full bg-primary-500" />
+          </div>
+          <span className="text-xs font-bold text-white tracking-wide">MYCE</span>
+        </div>
+
+        {/* Architecture Flow */}
+        <div className="flex flex-col gap-6 items-center mt-8">
+          {/* Top: Checkout */}
+          <div className="w-full max-w-xs bg-white border-2 border-neutral-300 rounded-xl p-4 shadow-sm">
+            <div className="flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center">
+                <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-xs font-semibold text-neutral-900 mb-1">Your Checkout</div>
+              <div className="text-xs text-neutral-500">Customer payment</div>
+            </div>
+          </div>
+
+          {/* Arrow Down */}
+          <svg className="w-8 h-8 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+
+          {/* Middle: Myce Layer */}
+          <div className="w-full bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-5 shadow-myce">
+            <div className="text-center mb-4">
+              <div className="text-sm font-bold text-white mb-1">Myce Orchestration</div>
+              <div className="text-xs text-white/80">Intelligent Layer</div>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              {[
+                { label: "Route", icon: "M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" },
+                { label: "Recover", icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" },
+                { label: "Balance", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+              ].map((feature, idx) => (
+                <div key={idx} className="flex flex-col items-center space-y-1 bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} />
+                  </svg>
+                  <span className="text-xs text-white font-medium">{feature.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrow Down */}
+          <svg className="w-8 h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+
+          {/* Bottom: Multiple Processors */}
+          <div className="w-full space-y-2">
+            <div className="text-xs font-semibold text-neutral-600 uppercase tracking-wide text-center mb-3">
+              Multiple Processors
+            </div>
+            {["Stripe", "Adyen", "PayPal"].map((processor, idx) => (
+              <div key={idx} className="w-full bg-white border border-neutral-200 rounded-lg px-4 py-2 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-200 group">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-neutral-700 group-hover:text-primary-600 transition-colors">
+                    {processor}
+                  </span>
+                  <div className="flex items-center space-x-1.5">
+                    <div className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
+                    <span className="text-xs text-accent-600 font-medium">Active</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

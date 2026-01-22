@@ -1,6 +1,5 @@
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
-import ArchitectureDiagram from "./components/ArchitectureDiagram";
 import CustomerLogoCarousel from "./components/CustomerLogoCarousel";
 import ProblemSection from "./components/ProblemSection";
 import ProblemSolutionFramework from "./components/ProblemSolutionFramework";
@@ -18,11 +17,6 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navigation />
       <Hero />
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ArchitectureDiagram />
-        </div>
-      </section>
       <CustomerLogoCarousel />
       <ProblemSection />
       <ProblemSolutionFramework />
