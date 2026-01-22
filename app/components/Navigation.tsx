@@ -6,9 +6,9 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-myce border-b border-neutral-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo - Using 2.png (full logo with circle) on white background */}
-          <div className="flex items-center">
+        <div className="relative flex items-center justify-between h-16">
+          {/* Logo - Left */}
+          <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
               <Image
                 src="/images/2.png"
@@ -21,8 +21,8 @@ export default function Navigation() {
             </a>
           </div>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Navigation Links - Centered (Payble style) */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <a href="#platform" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
               Platform
             </a>
@@ -37,8 +37,8 @@ export default function Navigation() {
             </a>
           </div>
 
-          {/* CTA Button */}
-          <div>
+          {/* CTA Button - Right */}
+          <div className="flex-shrink-0">
             <a
               href={WHATSAPP_URL}
               target="_blank"
