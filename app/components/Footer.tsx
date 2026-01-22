@@ -16,12 +16,6 @@ export default function Footer() {
       { label: "For Marketplaces", href: "#solutions" },
       { label: "Enterprise", href: "#solutions" },
     ],
-    resources: [
-      { label: "Documentation", href: "#resources" },
-      { label: "API Reference", href: "#resources" },
-      { label: "Case Studies", href: "#resources" },
-      { label: "Blog", href: "#resources" },
-    ],
     company: [
       { label: "About", href: "#about" },
       { label: "Careers", href: "#careers" },
@@ -35,15 +29,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-12 lg:py-16">
-          <div className="grid grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Logo & Description - Spans 2 columns on large screens */}
             <div className="col-span-2">
               <Image
                 src="/images/2.png"
                 alt="Myce"
-                width={160}
-                height={56}
-                className="h-12 w-auto mb-4"
+                width={200}
+                height={64}
+                className="h-14 w-auto mb-4"
               />
               <p className="text-sm text-neutral-600 max-w-xs mb-6">
                 Revenue orchestration platform for businesses that have outgrown single-provider payments.
@@ -88,20 +82,6 @@ export default function Footer() {
               <h3 className="text-sm font-semibold text-neutral-900 mb-4 uppercase tracking-wide">Solutions</h3>
               <ul className="space-y-3">
                 {footerLinks.solutions.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="text-sm text-neutral-600 hover:text-primary-500 transition-colors duration-myce">
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Resources Links */}
-            <div>
-              <h3 className="text-sm font-semibold text-neutral-900 mb-4 uppercase tracking-wide">Resources</h3>
-              <ul className="space-y-3">
-                {footerLinks.resources.map((link, index) => (
                   <li key={index}>
                     <a href={link.href} className="text-sm text-neutral-600 hover:text-primary-500 transition-colors duration-myce">
                       {link.label}

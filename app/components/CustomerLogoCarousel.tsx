@@ -1,47 +1,72 @@
-export default function CustomerLogoCarousel() {
-  const integrations = [
-    { name: "Stripe", width: 60 },
-    { name: "Adyen", width: 70 },
-    { name: "PayPal", width: 80 },
-    { name: "Square", width: 70 },
-    { name: "Razorpay", width: 90 },
-    { name: "Mollie", width: 70 },
-    { name: "Checkout.com", width: 100 },
-    { name: "Worldpay", width: 90 },
-  ];
+const proofBlocks = [
+  {
+    title: "Compliance-ready by design",
+    description: "PCI-aligned workflows, tokenization, and access controls.",
+    meta: "Security posture you can defend",
+  },
+  {
+    title: "Multi-processor resilience",
+    description: "Route across providers with intelligent fallbacks.",
+    meta: "No single point of failure",
+  },
+  {
+    title: "Real-time observability",
+    description: "Monitor approvals, retries, and recovery signals.",
+    meta: "Know where revenue stalls",
+  },
+];
 
+export default function CustomerLogoCarousel() {
   return (
-    <section className="py-12 border-y border-neutral-100 bg-neutral-50/50 overflow-hidden">
+    <section className="py-16 border-y border-neutral-100 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-12">
           <p className="text-sm text-neutral-600 font-medium">
-            Integrates with leading payment processors
+            Proof layers built into the platform
           </p>
         </div>
 
-        {/* Logo Carousel */}
-        <div className="relative">
-          <div className="flex items-center justify-center space-x-12 lg:space-x-16">
-            {integrations.map((integration, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
-              >
-                <div
-                  className="flex items-center justify-center h-12 text-neutral-400 hover:text-neutral-900 transition-colors font-semibold text-sm"
-                  style={{ width: `${integration.width}px` }}
-                >
-                  {integration.name}
+        <div className="grid md:grid-cols-3 gap-6">
+          {proofBlocks.map((block) => (
+            <div
+              key={block.title}
+              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-card hover:shadow-card-hover transition-all duration-myce"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3l7 4v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z" />
+                  </svg>
                 </div>
+                <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                  Proof
+                </span>
               </div>
-            ))}
-          </div>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                {block.title}
+              </h3>
+              <p className="text-sm text-neutral-600 mb-5">{block.description}</p>
+              <div className="rounded-xl border border-neutral-200 bg-neutral-50/70 p-4">
+                <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
+                  <span>Signal</span>
+                  <span>Live</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-2 rounded-full bg-white">
+                    <div className="h-2 rounded-full bg-primary-500" style={{ width: "78%" }} />
+                  </div>
+                  <div className="h-2 rounded-full bg-white">
+                    <div className="h-2 rounded-full bg-accent-400" style={{ width: "56%" }} />
+                  </div>
+                  <div className="h-2 rounded-full bg-white">
+                    <div className="h-2 rounded-full bg-neutral-400" style={{ width: "68%" }} />
+                  </div>
+                </div>
+                <p className="text-xs text-neutral-500 mt-3">{block.meta}</p>
+              </div>
+            </div>
+          ))}
         </div>
-
-        {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-neutral-50/50 to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-neutral-50/50 to-transparent pointer-events-none" />
       </div>
     </section>
   );

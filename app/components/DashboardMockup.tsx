@@ -12,7 +12,8 @@ export default function DashboardMockup() {
               <div className="h-2 w-24 bg-neutral-200 rounded" />
             </div>
           </div>
-          <div className="flex space-x-2">
+          <div className="flex items-center space-x-3">
+            <img src="/images/2.png" alt="Myce" className="h-6 w-auto opacity-70" />
             <div className="w-20 h-8 bg-neutral-200 rounded" />
             <div className="w-20 h-8 bg-primary-500 rounded" />
           </div>
@@ -23,106 +24,99 @@ export default function DashboardMockup() {
           {/* Stats Row */}
           <div className="grid grid-cols-4 gap-4">
             {[
-              { label: 'Approval Rate', value: '97.2%', trend: '+2.3%' },
-              { label: 'Total Volume', value: '$2.4M', trend: '+15%' },
-              { label: 'Transactions', value: '12,543', trend: '+8.1%' },
-              { label: 'Recovery Rate', value: '34%', trend: '+12%' },
-            ].map((stat, i) => (
+              { label: "Approval health", value: "Stable", trend: "Monitored" },
+              { label: "Recovery coverage", value: "Expanding", trend: "Automated" },
+              { label: "Routing diversity", value: "Adaptive", trend: "Live" },
+              { label: "Risk balance", value: "Controlled", trend: "Aligned" },
+            ].map((stat) => (
               <div
-                key={i}
+                key={stat.label}
                 className="bg-neutral-50 rounded-lg p-4 border border-neutral-100 hover:border-primary-300 hover:shadow-md transition-all duration-300 cursor-pointer group"
               >
-                <div className="text-xs text-neutral-600 mb-1 group-hover:text-primary-600 transition-colors">{stat.label}</div>
-                <div className="text-2xl font-bold text-neutral-900 mb-1">{stat.value}</div>
+                <div className="text-xs text-neutral-600 mb-1 group-hover:text-primary-600 transition-colors">
+                  {stat.label}
+                </div>
+                <div className="text-lg font-semibold text-neutral-900 mb-1">{stat.value}</div>
                 <div className="text-xs text-primary-500 font-medium">{stat.trend}</div>
               </div>
             ))}
           </div>
 
-          {/* Chart Area */}
-          <div className="bg-neutral-50 rounded-lg p-6 border border-neutral-100">
-            <div className="flex items-center justify-between mb-4">
-              <div className="h-4 w-40 bg-neutral-300 rounded" />
-              <div className="flex space-x-2">
-                <div className="w-16 h-6 bg-neutral-200 rounded" />
-                <div className="w-16 h-6 bg-neutral-200 rounded" />
-              </div>
-            </div>
-
-            {/* Simplified Chart Visualization */}
-            <div className="h-48 flex items-end justify-between space-x-2 group">
-              {[65, 78, 82, 71, 88, 92, 85, 95, 89, 97, 94, 98].map((height, i) => (
-                <div key={i} className="flex-1 flex flex-col justify-end">
-                  <div
-                    className="bg-gradient-to-t from-primary-500 to-primary-400 rounded-t hover:from-primary-600 hover:to-primary-500 transition-all duration-300 cursor-pointer"
-                    style={{ height: `${height}%` }}
-                  />
+          {/* Chart + Processors */}
+          <div className="grid grid-cols-[2.2fr_1fr] gap-4">
+            <div className="bg-neutral-50 rounded-lg p-6 border border-neutral-100">
+              <div className="flex items-center justify-between mb-4">
+                <div className="h-4 w-40 bg-neutral-300 rounded" />
+                <div className="flex items-center space-x-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-wide text-primary-600 bg-primary-50 border border-primary-100 px-2 py-1 rounded-full">
+                    Orchestration
+                  </span>
+                  <div className="w-16 h-6 bg-neutral-200 rounded" />
+                  <div className="w-16 h-6 bg-neutral-200 rounded" />
                 </div>
-              ))}
-            </div>
+              </div>
 
-            {/* Chart Labels */}
-            <div className="flex justify-between mt-2 px-1">
-              {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map((month, i) => (
-                <div key={i} className="text-xs text-neutral-500">{month}</div>
-              ))}
-            </div>
-          </div>
+              <div className="grid grid-cols-3 gap-4 mb-4">
+                {["Approval coverage", "Recovery depth", "Risk posture"].map((label) => (
+                  <div key={label} className="rounded-lg border border-neutral-200 bg-white p-3">
+                    <div className="text-xs text-neutral-500 mb-2">{label}</div>
+                    <div className="h-2 rounded-full bg-neutral-100">
+                      <div className="h-2 rounded-full bg-primary-500" style={{ width: "68%" }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-          {/* Payment Routing Visualization */}
-          <div className="grid grid-cols-3 gap-4">
-            {/* Source */}
-            <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-100">
-              <div className="text-xs text-neutral-600 mb-3">Payment Source</div>
-              <div className="space-y-2">
-                {['Card Payment', 'Digital Wallet', 'Bank Transfer'].map((method, i) => (
-                  <div key={i} className="flex items-center justify-between bg-white p-2 rounded border border-neutral-200">
-                    <span className="text-sm text-neutral-700">{method}</span>
-                    <div className="w-2 h-2 rounded-full bg-primary-500" />
+              <div className="h-44 rounded-lg border border-neutral-200 bg-white p-4 relative overflow-hidden">
+                <div className="h-full w-full relative">
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] [background-size:28px_28px]" />
+                  <svg className="relative w-full h-full" viewBox="0 0 400 160" fill="none">
+                    <path
+                      d="M10 120 C 60 90, 120 110, 170 80 C 220 50, 280 70, 330 40"
+                      stroke="#0043FF"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M10 120 C 60 90, 120 110, 170 80 C 220 50, 280 70, 330 40"
+                      stroke="#0043FF"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      opacity="0.08"
+                    />
+                    <path
+                      d="M10 130 C 70 120, 140 130, 200 100 C 260 70, 320 90, 380 60"
+                      stroke="#00D9FF"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="170" cy="80" r="4" fill="#0043FF" />
+                    <circle cx="330" cy="40" r="4" fill="#0043FF" />
+                  </svg>
+                </div>
+                <div className="absolute right-4 top-4 rounded-full border border-neutral-200 bg-white px-3 py-1 text-[10px] text-neutral-500 shadow-card">
+                  Approval lift trend
+                </div>
+              </div>
+
+              <div className="flex justify-between mt-3 px-1">
+                {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((month) => (
+                  <div key={month} className="text-xs text-neutral-500">
+                    {month}
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Routing Logic */}
-            <div className="flex flex-col items-center justify-center">
-              <div className="w-full h-24 relative group">
-                {/* Routing arrows */}
-                <svg className="w-full h-full" viewBox="0 0 100 100">
-                  <defs>
-                    <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#0043FF" />
-                      <stop offset="100%" stopColor="#00D9FF" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M 10 20 Q 50 10 90 20" stroke="url(#routeGradient)" strokeWidth="2" fill="none" className="animate-pulse" style={{ animationDuration: '3s' }} />
-                  <path d="M 10 50 L 90 50" stroke="url(#routeGradient)" strokeWidth="2" fill="none" className="animate-pulse" style={{ animationDuration: '2s' }} />
-                  <path d="M 10 80 Q 50 90 90 80" stroke="url(#routeGradient)" strokeWidth="2" fill="none" className="animate-pulse" style={{ animationDuration: '2.5s' }} />
-
-                  {/* Animated flow indicators */}
-                  <circle r="3" fill="#0043FF" className="opacity-75">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M 10 20 Q 50 10 90 20" />
-                  </circle>
-                  <circle r="3" fill="#00D9FF" className="opacity-75">
-                    <animateMotion dur="2s" repeatCount="indefinite" path="M 10 50 L 90 50" />
-                  </circle>
-                  <circle r="3" fill="#0043FF" className="opacity-75">
-                    <animateMotion dur="2.5s" repeatCount="indefinite" path="M 10 80 Q 50 90 90 80" />
-                  </circle>
-                </svg>
-              </div>
-              <div className="bg-primary-500 text-white text-xs px-3 py-1 rounded-full font-medium hover:bg-primary-600 transition-colors cursor-pointer">
-                Smart Routing
-              </div>
-            </div>
-
-            {/* Destination */}
             <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-100">
-              <div className="text-xs text-neutral-600 mb-3">Processors</div>
+              <div className="text-xs text-neutral-600 mb-3">Active processors</div>
               <div className="space-y-2">
-                {['Stripe', 'Adyen', 'PayPal'].map((processor, i) => (
-                  <div key={i} className="flex items-center justify-between bg-white p-2 rounded border border-neutral-200 hover:border-primary-300 hover:shadow-sm transition-all duration-200 cursor-pointer group">
-                    <span className="text-sm text-neutral-700 group-hover:text-primary-600 transition-colors">{processor}</span>
+                {["Stripe", "Adyen", "PayPal", "Checkout"].map((processor) => (
+                  <div
+                    key={processor}
+                    className="flex items-center justify-between bg-white p-2 rounded border border-neutral-200"
+                  >
+                    <span className="text-sm text-neutral-700">{processor}</span>
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
                       <span className="text-xs text-primary-600 font-medium">Active</span>
@@ -130,32 +124,77 @@ export default function DashboardMockup() {
                   </div>
                 ))}
               </div>
+              <div className="mt-3 rounded-lg border border-neutral-200 bg-white p-3">
+                <div className="text-[10px] text-neutral-500 mb-2">Risk balance</div>
+                <div className="h-2 rounded-full bg-neutral-100">
+                  <div className="h-2 rounded-full bg-primary-500" style={{ width: "72%" }} />
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Recent Transactions Table Header */}
-          <div className="bg-neutral-50 rounded-lg border border-neutral-100">
-            <div className="px-4 py-3 border-b border-neutral-200">
-              <div className="h-3 w-32 bg-neutral-300 rounded" />
-            </div>
-            <div className="p-4 space-y-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="flex items-center justify-between py-2 px-2 -mx-2 rounded hover:bg-neutral-100 transition-colors duration-200 cursor-pointer group">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 rounded-full bg-primary-100 group-hover:bg-primary-200 transition-colors" />
-                    <div className="space-y-1">
-                      <div className="h-2 w-24 bg-neutral-300 rounded" />
-                      <div className="h-2 w-16 bg-neutral-200 rounded" />
+          {/* Routing + Recovery Queue */}
+          <div className="grid grid-cols-[1.1fr_1fr] gap-4">
+            <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-100">
+              <div className="text-xs text-neutral-600 mb-3">Routing orchestration</div>
+              <div className="grid grid-cols-3 gap-3 items-center">
+                <div className="space-y-2">
+                  {["Card Payment", "Digital Wallet", "Bank Transfer"].map((method) => (
+                    <div key={method} className="flex items-center justify-between bg-white p-2 rounded border border-neutral-200">
+                      <span className="text-xs text-neutral-700">{method}</span>
+                      <div className="w-2 h-2 rounded-full bg-primary-500" />
                     </div>
+                  ))}
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                  <div className="w-full h-24 relative">
+                    <svg className="w-full h-full" viewBox="0 0 100 100">
+                      <defs>
+                        <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#0043FF" />
+                          <stop offset="100%" stopColor="#00D9FF" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M 10 20 Q 50 10 90 20" stroke="url(#routeGradient)" strokeWidth="2" fill="none" />
+                      <path d="M 10 50 L 90 50" stroke="url(#routeGradient)" strokeWidth="2" fill="none" />
+                      <path d="M 10 80 Q 50 90 90 80" stroke="url(#routeGradient)" strokeWidth="2" fill="none" />
+                    </svg>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="h-2 w-16 bg-neutral-300 rounded" />
-                    <div className="h-6 w-16 bg-primary-100 rounded-full flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary-500" />
-                    </div>
+                  <div className="bg-primary-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+                    Smart Routing
                   </div>
                 </div>
-              ))}
+                <div className="space-y-2">
+                  {["Stripe", "Adyen", "PayPal"].map((processor) => (
+                    <div
+                      key={processor}
+                      className="flex items-center justify-between bg-white p-2 rounded border border-neutral-200"
+                    >
+                      <span className="text-xs text-neutral-700">{processor}</span>
+                      <span className="text-[10px] text-primary-600">Active</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-100">
+              <div className="text-xs text-neutral-600 mb-3">Recovery queue</div>
+              <div className="space-y-2">
+                {[
+                  { label: "Retry 1 • EU card", status: "Retrying", tone: "bg-primary-100 text-primary-600" },
+                  { label: "Wallet fallback", status: "Recovered", tone: "bg-accent-100 text-accent-700" },
+                  { label: "Risk review", status: "Escalated", tone: "bg-neutral-200 text-neutral-600" },
+                  { label: "Bank transfer", status: "Queued", tone: "bg-neutral-100 text-neutral-600" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center justify-between bg-white p-2 rounded border border-neutral-200">
+                    <span className="text-xs text-neutral-700">{item.label}</span>
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full ${item.tone}`}>
+                      {item.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

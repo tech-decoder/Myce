@@ -5,21 +5,31 @@ export default function ShiftSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content - Left */}
           <div>
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-white" />
               <span className="text-xs font-medium text-white tracking-wide uppercase">
                 The Shift
               </span>
             </div>
-            <h2 className="text-h2-sm lg:text-h2 text-white mb-6">
+            <h2 className="text-h2-sm lg:text-h2 text-white mb-6 text-balance">
               Payments shouldn&apos;t be binary.
             </h2>
-            <div className="text-lg text-white/90 space-y-4 max-w-readable">
-              <p>
-                Growing businesses need more than &quot;approve or block.&quot;
-              </p>
-              <p>
-                Myce replaces single-decision payments with a coordinated system — often referred to as revenue orchestration — where approvals, retries, recovery, and risk work together in real time.
-              </p>
+            <div className="grid gap-4 max-w-readable">
+              {[
+                {
+                  title: "Binary logic breaks growth",
+                  body: "Growing businesses need more than “approve or block.”",
+                },
+                {
+                  title: "Orchestration replaces guesswork",
+                  body: "Approvals, retries, recovery, and risk work together in real time.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-2xl border border-white/20 bg-white/10 p-5">
+                  <div className="text-sm font-semibold text-white mb-2">{item.title}</div>
+                  <p className="text-sm text-white/80">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
 

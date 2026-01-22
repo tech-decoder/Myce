@@ -1,15 +1,14 @@
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
+import DashboardMockup from "./components/DashboardMockup";
 import CustomerLogoCarousel from "./components/CustomerLogoCarousel";
 import ProblemSection from "./components/ProblemSection";
 import ProblemSolutionFramework from "./components/ProblemSolutionFramework";
-import ShiftSection from "./components/ShiftSection";
 import WhatMyceDoesSection from "./components/WhatMyceDoesSection";
+import ImplementationProcess from "./components/ImplementationProcess";
 import StripePayPalSection from "./components/StripePayPalSection";
-import HowItWorksSection from "./components/HowItWorksSection";
 import ResultsSection from "./components/ResultsSection";
-import WhoItsForSection from "./components/WhoItsForSection";
-import TestimonialsSection from "./components/TestimonialsSection";
+import PricingSection from "./components/PricingSection";
 import FAQSection from "./components/FAQSection";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
@@ -19,16 +18,19 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navigation />
       <Hero />
+      <section className="pb-20 lg:pb-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <DashboardMockup />
+        </div>
+      </section>
       <CustomerLogoCarousel />
       <ProblemSection />
       <ProblemSolutionFramework />
-      <ShiftSection />
       <WhatMyceDoesSection />
+      <ImplementationProcess />
       <StripePayPalSection />
-      <HowItWorksSection />
       <ResultsSection />
-      <WhoItsForSection />
-      <TestimonialsSection />
+      <PricingSection />
       <FAQSection />
       <FinalCTA />
       <Footer />
