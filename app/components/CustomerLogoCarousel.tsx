@@ -30,45 +30,55 @@ export default function CustomerLogoCarousel() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {proofBlocks.map((block) => (
-            <div
-              key={block.title}
-              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-card hover:shadow-card-hover transition-all duration-myce"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={block.icon} />
-                  </svg>
+          {proofBlocks.map((block, idx) => {
+            // Different color themes for each card
+            const themes = [
+              { bg: "bg-primary-50", iconBg: "bg-primary-100", iconColor: "text-primary-600", barColor: "bg-primary-500" },
+              { bg: "bg-accent-50", iconBg: "bg-accent-100", iconColor: "text-accent-600", barColor: "bg-accent-500" },
+              { bg: "bg-neutral-50", iconBg: "bg-neutral-200", iconColor: "text-neutral-700", barColor: "bg-neutral-500" },
+            ];
+            const theme = themes[idx];
+
+            return (
+              <div
+                key={block.title}
+                className={`rounded-2xl border border-neutral-200 ${theme.bg} p-6 shadow-card hover:shadow-card-hover transition-all duration-myce`}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className={`w-12 h-12 rounded-full ${theme.iconBg} flex items-center justify-center`}>
+                    <svg className={`w-5 h-5 ${theme.iconColor}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={block.icon} />
+                    </svg>
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                    Proof
+                  </span>
                 </div>
-                <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
-                  Proof
-                </span>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  {block.title}
+                </h3>
+                <p className="text-sm text-neutral-600 mb-5">{block.description}</p>
+                <div className="rounded-xl border border-neutral-200 bg-white/70 p-4">
+                  <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
+                    <span>Signal</span>
+                    <span>Live</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-2 rounded-full bg-white">
+                      <div className={`h-2 rounded-full ${theme.barColor}`} style={{ width: "78%" }} />
+                    </div>
+                    <div className="h-2 rounded-full bg-white">
+                      <div className="h-2 rounded-full bg-accent-400" style={{ width: "56%" }} />
+                    </div>
+                    <div className="h-2 rounded-full bg-white">
+                      <div className="h-2 rounded-full bg-neutral-400" style={{ width: "68%" }} />
+                    </div>
+                  </div>
+                  <p className="text-xs text-neutral-500 mt-3">{block.meta}</p>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                {block.title}
-              </h3>
-              <p className="text-sm text-neutral-600 mb-5">{block.description}</p>
-              <div className="rounded-xl border border-neutral-200 bg-neutral-50/70 p-4">
-                <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
-                  <span>Signal</span>
-                  <span>Live</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-2 rounded-full bg-white">
-                    <div className="h-2 rounded-full bg-primary-500" style={{ width: "78%" }} />
-                  </div>
-                  <div className="h-2 rounded-full bg-white">
-                    <div className="h-2 rounded-full bg-accent-400" style={{ width: "56%" }} />
-                  </div>
-                  <div className="h-2 rounded-full bg-white">
-                    <div className="h-2 rounded-full bg-neutral-400" style={{ width: "68%" }} />
-                  </div>
-                </div>
-                <p className="text-xs text-neutral-500 mt-3">{block.meta}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

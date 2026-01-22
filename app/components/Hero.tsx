@@ -1,19 +1,21 @@
+import Image from "next/image";
+
 const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=971555710877&text=Hello%21+I+want+to+know+more+about+Myce&type=phone_number&app_absent=0";
 
 export default function Hero() {
   return (
-    <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-white">
+    <section className="relative pt-20 pb-12 lg:pt-24 lg:pb-16 overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-white">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:22px_22px] opacity-60" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* 2-Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left: Content */}
           <div className="text-left">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-4">
               <span className="w-2 h-2 rounded-full bg-primary-500" />
               <span className="text-xs font-medium text-neutral-700 tracking-wide uppercase">
                 Revenue Orchestration Solutions
@@ -21,31 +23,31 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-5 leading-[1.1] text-neutral-900">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-3 leading-[1.1] text-neutral-900">
               Stop Losing <span className="text-primary-600">Revenue</span> to Payment Provider <span className="text-primary-600">Lock-In</span>
             </h1>
-            <p className="text-lg sm:text-xl text-neutral-600 mb-4">
+            <p className="text-base sm:text-lg text-neutral-600 mb-3">
               Enterprise payment orchestration, delivered in <span className="text-primary-600 font-semibold">weeks—not months</span>.
             </p>
 
             {/* Subheadline */}
-            <p className="text-base sm:text-lg text-neutral-600 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-600 mb-6 leading-relaxed">
               We help finance teams implement multi-processor payment orchestration with intelligent routing, automatic recovery, and real-time analytics. All the benefits, none of the complexity.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="flex flex-col sm:flex-row items-start gap-3">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-primary-500 text-white text-base font-semibold rounded-full hover:bg-primary-600 transition-all duration-myce shadow-myce hover:shadow-myce-md hover:scale-105"
+              className="inline-flex items-center px-6 py-3 bg-primary-500 text-white text-sm font-semibold rounded-full hover:bg-primary-600 transition-all duration-myce shadow-myce hover:shadow-myce-md hover:scale-105"
             >
               Get a Custom Quote
             </a>
             <a
               href="#how-it-works"
-              className="inline-flex items-center px-6 py-3 text-primary-600 text-base font-medium rounded-full border border-primary-200 bg-white hover:border-primary-400 transition-colors duration-myce group"
+              className="inline-flex items-center px-5 py-2.5 text-primary-600 text-sm font-medium rounded-full border border-primary-200 bg-white hover:border-primary-400 transition-colors duration-myce group"
             >
               <span className="w-2 h-2 rounded-full bg-primary-500 mr-2" />
               See how it works
@@ -56,7 +58,7 @@ export default function Hero() {
           </div>
 
             {/* Service Benefits */}
-            <div className="mt-8 flex flex-wrap items-start gap-3">
+            <div className="mt-6 flex flex-wrap items-start gap-2">
             {[
               {
                 label: "Live in 2 weeks",
@@ -77,7 +79,7 @@ export default function Hero() {
             ].map((item) => (
               <span
                 key={item.label}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-200 bg-white text-xs font-medium text-neutral-700 shadow-card"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-neutral-200 bg-white text-xs font-medium text-neutral-700 shadow-card"
               >
                 <svg className="w-3 h-3 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
@@ -88,8 +90,8 @@ export default function Hero() {
           </div>
 
             {/* Trust Badge */}
-            <div className="mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-50 border border-neutral-200">
-              <svg className="w-4 h-4 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-50 border border-neutral-200">
+              <svg className="w-3.5 h-3.5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
               <span className="text-xs font-medium text-neutral-600">Powered by enterprise-grade infrastructure</span>
@@ -106,46 +108,49 @@ export default function Hero() {
   );
 }
 
-// Inline version for Hero - includes Myce logo
+// Inline version for Hero - horizontal flow with actual Myce logo
 function ArchitectureDiagramInline() {
   return (
     <div className="relative w-full">
       {/* Diagram Container */}
-      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 p-6 lg:p-8 shadow-card">
-        {/* Myce Logo Badge */}
-        <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-primary-500 flex items-center gap-2">
-          <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center">
-            <div className="w-2 h-2 rounded-full bg-primary-500" />
-          </div>
-          <span className="text-xs font-bold text-white tracking-wide">MYCE</span>
+      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 p-6 shadow-card">
+        {/* Myce Logo - Actual logo from public/images/2.png */}
+        <div className="absolute top-4 right-4">
+          <Image
+            src="/images/2.png"
+            alt="Myce"
+            width={60}
+            height={20}
+            className="object-contain"
+          />
         </div>
 
-        {/* Architecture Flow */}
-        <div className="flex flex-col gap-6 items-center mt-8">
-          {/* Top: Checkout */}
-          <div className="w-full max-w-xs bg-white border-2 border-neutral-300 rounded-xl p-4 shadow-sm">
-            <div className="flex items-center justify-center mb-3">
-              <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center">
-                <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* Architecture Flow - Horizontal */}
+        <div className="flex items-center gap-4 mt-8">
+          {/* Left: Checkout */}
+          <div className="flex-shrink-0 w-32 bg-white border-2 border-neutral-300 rounded-xl p-3 shadow-sm">
+            <div className="flex items-center justify-center mb-2">
+              <div className="w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center">
+                <svg className="w-4 h-4 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
             </div>
             <div className="text-center">
-              <div className="text-xs font-semibold text-neutral-900 mb-1">Your Checkout</div>
-              <div className="text-xs text-neutral-500">Customer payment</div>
+              <div className="text-xs font-semibold text-neutral-900 mb-0.5">Your Checkout</div>
+              <div className="text-xs text-neutral-500">Payment</div>
             </div>
           </div>
 
-          {/* Arrow Down */}
-          <svg className="w-8 h-8 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          {/* Arrow Right */}
+          <svg className="w-6 h-6 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
 
           {/* Middle: Myce Layer */}
-          <div className="w-full bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-5 shadow-myce">
-            <div className="text-center mb-4">
-              <div className="text-sm font-bold text-white mb-1">Myce Orchestration</div>
+          <div className="flex-grow bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-4 shadow-myce">
+            <div className="text-center mb-3">
+              <div className="text-sm font-bold text-white mb-0.5">Myce Orchestration</div>
               <div className="text-xs text-white/80">Intelligent Layer</div>
             </div>
             <div className="grid grid-cols-3 gap-2">
@@ -155,7 +160,7 @@ function ArchitectureDiagramInline() {
                 { label: "Balance", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
               ].map((feature, idx) => (
                 <div key={idx} className="flex flex-col items-center space-y-1 bg-white/10 backdrop-blur-sm rounded-lg p-2">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} />
                   </svg>
                   <span className="text-xs text-white font-medium">{feature.label}</span>
@@ -164,26 +169,23 @@ function ArchitectureDiagramInline() {
             </div>
           </div>
 
-          {/* Arrow Down */}
-          <svg className="w-8 h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          {/* Arrow Right */}
+          <svg className="w-6 h-6 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
 
-          {/* Bottom: Multiple Processors */}
-          <div className="w-full space-y-2">
-            <div className="text-xs font-semibold text-neutral-600 uppercase tracking-wide text-center mb-3">
-              Multiple Processors
+          {/* Right: Multiple Processors */}
+          <div className="flex-shrink-0 w-40 space-y-1.5">
+            <div className="text-xs font-semibold text-neutral-600 uppercase tracking-wide text-center mb-2">
+              Processors
             </div>
             {["Stripe", "Adyen", "PayPal"].map((processor, idx) => (
-              <div key={idx} className="w-full bg-white border border-neutral-200 rounded-lg px-4 py-2 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-200 group">
+              <div key={idx} className="w-full bg-white border border-neutral-200 rounded-lg px-3 py-1.5 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-200 group">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-neutral-700 group-hover:text-primary-600 transition-colors">
+                  <span className="text-xs font-medium text-neutral-700 group-hover:text-primary-600 transition-colors">
                     {processor}
                   </span>
-                  <div className="flex items-center space-x-1.5">
-                    <div className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
-                    <span className="text-xs text-accent-600 font-medium">Active</span>
-                  </div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse" />
                 </div>
               </div>
             ))}

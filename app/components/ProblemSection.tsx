@@ -77,13 +77,10 @@ export default function ProblemSection() {
           <div className="grid gap-4">
             {anchors.map((anchor) => (
               <div key={anchor.title} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-card">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={anchor.icon} />
-                    </svg>
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Anchor</span>
+                <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center mb-4">
+                  <svg className="w-5 h-5 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={anchor.icon} />
+                  </svg>
                 </div>
                 <h3 className="text-base font-semibold text-neutral-900 mb-2">{anchor.title}</h3>
                 <p className="text-sm text-neutral-600">{anchor.description}</p>

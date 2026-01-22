@@ -77,7 +77,7 @@ export default function PricingSection() {
                 <span className="text-xs text-neutral-500">Paid monthly</span>
               </div>
               <div className="flex items-end gap-2 mb-2">
-                <div className="text-4xl font-bold text-neutral-900">{plan.price}</div>
+                <div className="text-2xl font-bold text-neutral-900">{plan.price}</div>
                 {plan.cadence ? <div className="text-sm text-neutral-500">{plan.cadence}</div> : null}
               </div>
               <p className="text-sm text-neutral-600 mb-6">{plan.description}</p>
