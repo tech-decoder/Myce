@@ -10,9 +10,9 @@ export default function Footer() {
             <Image
               src="/images/2.png"
               alt="Myce"
-              width={100}
-              height={36}
-              className="h-9 w-auto"
+              width={120}
+              height={44}
+              className="h-11 w-auto"
             />
           </div>
 
