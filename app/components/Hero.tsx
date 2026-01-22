@@ -4,18 +4,18 @@ const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=971555710877&text=Hel
 
 export default function Hero() {
   return (
-    <section className="relative pt-48 pb-32 lg:pt-56 lg:pb-40 overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-white">
+    <section className="relative pt-24 pb-20 lg:pt-28 lg:pb-24 overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-white">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:22px_22px] opacity-60" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* 2-Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
           {/* Left: Content */}
           <div className="text-left max-w-2xl">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-6">
               <span className="w-2 h-2 rounded-full bg-primary-500" />
               <span className="text-xs font-medium text-neutral-700 tracking-wide uppercase">
                 Revenue Orchestration Solutions
@@ -23,28 +23,28 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-[42px] lg:text-[42px] font-black mb-6 leading-[1.15] text-neutral-900 tracking-tight">
+            <h1 className="text-4xl sm:text-[42px] lg:text-[42px] font-black mb-5 leading-[1.15] text-neutral-900 max-w-lg">
               Stop Losing <span className="text-primary-600">Revenue</span> to Payment Provider <span className="text-primary-600">Lock-In</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-neutral-600 mb-12 leading-relaxed">
+            <p className="text-lg text-neutral-600 mb-8 leading-[1.6] max-w-xl">
               Enterprise payment orchestration, delivered in <span className="text-primary-600 font-semibold">weeks—not months</span>. Intelligent routing, automatic recovery, and real-time analytics.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-start gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row items-start gap-4">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-10 py-5 bg-primary-500 text-white text-lg font-semibold rounded-full hover:bg-primary-600 transition-all duration-myce shadow-myce hover:shadow-myce-md hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-primary-500 text-white text-base font-semibold rounded-full hover:bg-primary-600 transition-all duration-myce shadow-myce hover:shadow-myce-md hover:scale-105"
               >
                 Get a Custom Quote
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center px-8 py-4.5 text-primary-600 text-lg font-medium rounded-full border-2 border-primary-200 bg-white hover:border-primary-400 hover:bg-primary-50 transition-all duration-myce group"
+                className="inline-flex items-center px-6 py-3 text-primary-600 text-base font-medium rounded-full border-2 border-primary-200 bg-white hover:border-primary-400 hover:bg-primary-50 transition-all duration-myce group"
               >
                 See how it works
                 <svg className="ml-2 w-5 h-5 text-primary-500 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,11 +69,11 @@ function ArchitectureDiagramInline() {
   return (
     <div className="relative w-full">
       {/* Diagram Container */}
-      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 p-8 shadow-card">
+      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 p-6 shadow-card">
         {/* Architecture Flow - Horizontal */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           {/* Left: Checkout */}
-          <div className="flex-shrink-0 w-40 bg-white border-2 border-neutral-300 rounded-xl p-4 shadow-sm">
+          <div className="flex-shrink-0 w-36 bg-white border-2 border-neutral-300 rounded-xl p-3 shadow-sm">
             <div className="flex items-center justify-center mb-3">
               <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center">
                 <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,19 +88,19 @@ function ArchitectureDiagramInline() {
           </div>
 
           {/* Arrow Right */}
-          <svg className="w-8 h-8 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
 
           {/* Middle: Myce Layer */}
-          <div className="flex-grow bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-6 shadow-myce">
+          <div className="w-[280px] bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-5 shadow-myce">
             {/* Myce Logo - Above text */}
             <div className="flex justify-center mb-4">
               <Image
                 src="/images/1.png"
                 alt="Myce"
-                width={100}
-                height={32}
+                width={90}
+                height={28}
                 className="object-contain"
               />
             </div>
@@ -125,12 +125,12 @@ function ArchitectureDiagramInline() {
           </div>
 
           {/* Arrow Right */}
-          <svg className="w-8 h-8 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
 
           {/* Right: Multiple Processors */}
-          <div className="flex-shrink-0 w-44 space-y-2">
+          <div className="flex-shrink-0 w-40 space-y-1.5">
             <div className="text-sm font-semibold text-neutral-600 uppercase tracking-wide text-center mb-3">
               Processors
             </div>
