@@ -40,8 +40,8 @@ export default function ProblemSolutionFramework() {
           {/* Problems Column */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-error-50 flex items-center justify-center">
-                <svg className="w-6 h-6 text-error-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center">
+                <svg className="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
@@ -50,8 +50,8 @@ export default function ProblemSolutionFramework() {
             <div className="space-y-4">
               {problems.map((problem, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-error-100 flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 rounded-full bg-error-500" />
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-neutral-200 flex items-center justify-center mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-neutral-600" />
                   </div>
                   <p className="text-neutral-700 text-sm">{problem}</p>
                 </div>
@@ -86,8 +86,8 @@ export default function ProblemSolutionFramework() {
           {/* Solutions Column */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-success-50 flex items-center justify-center">
-                <svg className="w-6 h-6 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl bg-accent-50 flex items-center justify-center">
+                <svg className="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -96,8 +96,8 @@ export default function ProblemSolutionFramework() {
             <div className="space-y-4">
               {solutions.map((solution, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-success-100 flex items-center justify-center mt-0.5">
-                    <svg className="w-3 h-3 text-success-500" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-100 flex items-center justify-center mt-0.5">
+                    <svg className="w-3 h-3 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -111,12 +111,12 @@ export default function ProblemSolutionFramework() {
         {/* Arrow indicators (desktop only) */}
         <div className="hidden lg:flex items-center justify-center space-x-12 mt-12">
           <div className="flex items-center space-x-3">
-            <div className="text-error-500 font-semibold text-sm">Fragile</div>
-            <svg className="w-16 h-6 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 64 24">
+            <div className="text-neutral-600 font-semibold text-sm">Fragile</div>
+            <svg className="w-16 h-6 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 64 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 12h60m-6-6l6 6-6 6" />
             </svg>
           </div>
-          <div className="text-success-500 font-semibold text-sm">Resilient</div>
+          <div className="text-accent-500 font-semibold text-sm">Resilient</div>
         </div>
       </div>
     </section>

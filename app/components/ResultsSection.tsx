@@ -3,22 +3,18 @@ export default function ResultsSection() {
     {
       metric: "+30%",
       label: "Conversion lift",
-      color: "text-primary-500 hover:text-primary-600",
     },
     {
       metric: "Up to 40%",
       label: "Fewer false declines",
-      color: "text-success-500 hover:text-success-700",
     },
     {
       metric: "Millisecond",
       label: "Response times",
-      color: "text-accent-500 hover:text-accent-600",
     },
     {
       metric: "Millions",
       label: "In recovered revenue",
-      color: "text-warning-500 hover:text-warning-700",
     },
   ];
 
@@ -39,7 +35,7 @@ export default function ResultsSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {results.map((result, index) => (
             <div key={index} className="text-center group">
-              <div className={`text-4xl lg:text-5xl font-bold mb-3 ${result.color} transition-colors duration-myce`}>
+              <div className="text-4xl lg:text-5xl font-bold mb-3 text-primary-500 group-hover:text-primary-600 transition-colors duration-myce">
                 {result.metric}
               </div>
               <div className="text-base lg:text-body-lg text-neutral-600">
