@@ -1,5 +1,6 @@
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
+import ServiceBenefits from "./components/ServiceBenefits";
 import CustomerLogoCarousel from "./components/CustomerLogoCarousel";
 import ProblemSection from "./components/ProblemSection";
 import ProblemSolutionFramework from "./components/ProblemSolutionFramework";
@@ -17,6 +18,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navigation />
       <Hero />
+      <ServiceBenefits />
       <CustomerLogoCarousel />
       <ProblemSection />
       <ProblemSolutionFramework />
