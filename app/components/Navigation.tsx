@@ -13,10 +13,10 @@ export default function Navigation() {
               <Image
                 src="/images/2.png"
                 alt="Myce"
-                width={140}
-                height={48}
+                width={160}
+                height={56}
                 priority
-                className="h-12 w-auto"
+                className="h-14 w-auto"
               />
             </a>
           </div>
