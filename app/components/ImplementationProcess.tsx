@@ -6,21 +6,33 @@ const steps = [
     title: "Discovery & Analysis",
     duration: "Day 1-2",
     description: "We analyze your current payment stack, identify optimization opportunities, and design a custom orchestration strategy.",
-    deliverables: ["Payment stack audit", "Routing strategy", "ROI projection"],
+    deliverables: [
+      { text: "Payment stack audit", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" },
+      { text: "Routing strategy", icon: "M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" },
+      { text: "ROI projection", icon: "M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" }
+    ],
   },
   {
     num: "02",
     title: "Configuration & Setup",
     duration: "Week 1",
     description: "Our team configures routing rules, retry logic, fraud parameters, and recovery workflows tailored to your business.",
-    deliverables: ["Processor integration", "Rule configuration", "Testing environment"],
+    deliverables: [
+      { text: "Processor integration", icon: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" },
+      { text: "Rule configuration", icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" },
+      { text: "Testing environment", icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" }
+    ],
   },
   {
     num: "03",
     title: "Go Live & Optimize",
     duration: "Week 2",
     description: "Launch in production with ongoing monitoring, optimization, and dedicated support. We continuously refine your setup for maximum performance.",
-    deliverables: ["Production deployment", "24/7 monitoring", "Ongoing optimization"],
+    deliverables: [
+      { text: "Production deployment", icon: "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" },
+      { text: "24/7 monitoring", icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
+      { text: "Ongoing optimization", icon: "M13 10V3L4 14h7v7l9-11h-7z" }
+    ],
   },
 ];
 
@@ -80,10 +92,10 @@ export default function ImplementationProcess() {
                     <ul className="space-y-2">
                       {step.deliverables.map((item, idx) => (
                         <li key={idx} className="flex items-start text-xs text-neutral-700">
-                          <svg className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          <svg className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                           </svg>
-                          {item}
+                          {item.text}
                         </li>
                       ))}
                     </ul>
