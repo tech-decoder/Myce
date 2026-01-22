@@ -33,21 +33,21 @@ export default function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="flex flex-col sm:flex-row items-start gap-3">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-primary-500 text-white text-base font-semibold rounded-full hover:bg-primary-600 transition-all duration-myce shadow-myce hover:shadow-myce-md hover:scale-105"
+                className="inline-flex items-center whitespace-nowrap px-6 py-3 bg-primary-500 text-white text-sm font-semibold rounded-full hover:bg-primary-600 transition-all duration-myce shadow-myce hover:shadow-myce-md hover:scale-105"
               >
-                Get a Custom Quote
+                Get Quote
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center px-6 py-3 text-primary-600 text-base font-medium rounded-full border-2 border-primary-200 bg-white hover:border-primary-400 hover:bg-primary-50 transition-all duration-myce group"
+                className="inline-flex items-center whitespace-nowrap px-5 py-2.5 text-primary-600 text-sm font-medium rounded-full border-2 border-primary-200 bg-white hover:border-primary-400 hover:bg-primary-50 transition-all duration-myce group"
               >
-                See how it works
-                <svg className="ml-2 w-5 h-5 text-primary-500 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                How it works
+                <svg className="ml-2 w-4 h-4 text-primary-500 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
