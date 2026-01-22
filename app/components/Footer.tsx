@@ -5,14 +5,14 @@ export default function Footer() {
     <footer className="border-t border-neutral-100 py-12 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo */}
+          {/* Logo - Using 2.png (full logo) on light background */}
           <div className="mb-6 md:mb-0">
             <Image
-              src="/images/1.png"
+              src="/images/2.png"
               alt="Myce"
-              width={60}
-              height={40}
-              className="h-8 w-auto"
+              width={100}
+              height={36}
+              className="h-9 w-auto"
             />
           </div>
 

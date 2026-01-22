@@ -19,19 +19,22 @@ Myce removes single-provider fragility from your revenue operations.
 ### Logo System
 
 **Primary Logo**: Full wordmark with circle enclosure (2.png)
-- Use on light backgrounds
+- Use on WHITE and LIGHT backgrounds (navigation, footer, light sections)
 - Minimum width: 120px digital, 1 inch print
 - Clear space: Equal to height of the "m"
 
 **Secondary Logo**: Wordmark only (1.png)
-- Use when space is limited
-- Navigation, favicons, social media
+- Use on PRIMARY BLUE backgrounds (dark sections, colored backgrounds)
+- Also for space-limited contexts (favicons, social media)
+- Minimum width: 80px digital
 
 **Logo Usage Rules:**
 - Never stretch or distort
-- Never change colors (except white version on dark backgrounds)
+- Never change colors
 - Never add effects or shadows
 - Never rotate
+- Use 2.png on white/light backgrounds
+- Use 1.png on blue/dark backgrounds
 
 ---
 

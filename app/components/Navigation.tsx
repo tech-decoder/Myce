@@ -7,16 +7,16 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-myce border-b border-neutral-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo - Using 2.png (full logo with circle) on white background */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <Image
-                src="/images/1.png"
+                src="/images/2.png"
                 alt="Myce"
-                width={60}
+                width={120}
                 height={40}
                 priority
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </a>
           </div>
