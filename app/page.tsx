@@ -10,6 +10,7 @@ import HowItWorksSection from "./components/HowItWorksSection";
 import ResultsSection from "./components/ResultsSection";
 import WhoItsForSection from "./components/WhoItsForSection";
 import TestimonialsSection from "./components/TestimonialsSection";
+import FAQSection from "./components/FAQSection";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 
@@ -28,6 +29,7 @@ export default function Home() {
       <ResultsSection />
       <WhoItsForSection />
       <TestimonialsSection />
+      <FAQSection />
       <FinalCTA />
       <Footer />
     </main>

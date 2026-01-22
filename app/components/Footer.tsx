@@ -41,9 +41,9 @@ export default function Footer() {
               <Image
                 src="/images/2.png"
                 alt="Myce"
-                width={120}
-                height={44}
-                className="h-11 w-auto mb-4"
+                width={160}
+                height={56}
+                className="h-12 w-auto mb-4"
               />
               <p className="text-sm text-neutral-600 max-w-xs mb-6">
                 Revenue orchestration platform for businesses that have outgrown single-provider payments.

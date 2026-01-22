@@ -13,26 +13,32 @@ export default function Navigation() {
               <Image
                 src="/images/2.png"
                 alt="Myce"
-                width={160}
-                height={56}
+                width={200}
+                height={64}
                 priority
-                className="h-14 w-auto"
+                className="h-16 w-auto"
               />
             </a>
           </div>
 
           {/* Navigation Links - Centered (Payble style) */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            <a href="#platform" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
+            <a href="/#platform" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
               Platform
             </a>
-            <a href="#solutions" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
+            <a href="/#solutions" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
               Solutions
             </a>
-            <a href="#resources" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
+            <a href="/pricing" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
+              Pricing
+            </a>
+            <a href="/#resources" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
               Resources
             </a>
-            <a href="#contact" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
+            <a href="/#faq" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
+              FAQ
+            </a>
+            <a href="/#contact" className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors duration-myce">
               Contact
             </a>
           </div>
