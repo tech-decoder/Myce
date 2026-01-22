@@ -1,9 +1,13 @@
+"use client";
+
+import { useState } from "react";
+
 const plans = [
   {
     name: "Growth",
     badge: "Essential",
-    price: "From $1,500",
-    cadence: "/month",
+    monthlyPrice: 1500,
+    yearlyPrice: 1200,
     description: "For teams scaling volume and adding routing for the first time.",
     features: ["2-week implementation", "Up to 3 processors", "Smart retries + recovery", "Email support (24hr SLA)"],
     highlight: false,
@@ -12,8 +16,8 @@ const plans = [
   {
     name: "Scale",
     badge: "Most popular",
-    price: "From $4,500",
-    cadence: "/month",
+    monthlyPrice: 4500,
+    yearlyPrice: 3600,
     description: "For multi-market operations optimizing approval rates and cost.",
     features: ["1-week fast-track setup", "Unlimited processors", "Dedicated success manager", "24/7 priority support"],
     highlight: true,
@@ -22,8 +26,8 @@ const plans = [
   {
     name: "Enterprise",
     badge: "White-glove",
-    price: "Custom",
-    cadence: "",
+    monthlyPrice: null,
+    yearlyPrice: null,
     description: "For high-volume businesses requiring hands-on optimization.",
     features: ["Custom implementation", "SLA-backed 99.9% uptime", "Quarterly strategy reviews", "Direct engineering access"],
     highlight: false,
@@ -32,6 +36,18 @@ const plans = [
 ];
 
 export default function PricingSection() {
+  const [isYearly, setIsYearly] = useState(false);
+
+  const formatPrice = (plan: typeof plans[0]) => {
+    if (!plan.monthlyPrice) return "Custom";
+    const price = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
+    return `From $${price.toLocaleString()}`;
+  };
+
+  const getCadence = () => {
+    return isYearly ? "/month (billed yearly)" : "/month";
+  };
+
   return (
     <section className="section-spacing bg-neutral-50" id="pricing">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -52,13 +68,23 @@ export default function PricingSection() {
           </div>
 
           <div className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 p-1 text-sm">
-            <button className="px-4 py-2 rounded-full bg-primary-500 text-white font-medium">
+            <button
+              onClick={() => setIsYearly(false)}
+              className={`px-4 py-2 rounded-full font-medium transition-all duration-myce ${
+                !isYearly ? "bg-primary-500 text-white" : "text-neutral-600 hover:text-neutral-900"
+              }`}
+            >
               Monthly
             </button>
-            <button className="px-4 py-2 rounded-full text-neutral-600">
+            <button
+              onClick={() => setIsYearly(true)}
+              className={`px-4 py-2 rounded-full font-medium transition-all duration-myce ${
+                isYearly ? "bg-primary-500 text-white" : "text-neutral-600 hover:text-neutral-900"
+              }`}
+            >
               Yearly
             </button>
-            <span className="ml-3 text-xs text-neutral-500">Save 20%</span>
+            <span className="ml-3 text-xs text-accent-600 font-medium">Save 20%</span>
           </div>
         </div>
 
@@ -77,8 +103,8 @@ export default function PricingSection() {
                 <span className="text-xs text-neutral-500">Paid monthly</span>
               </div>
               <div className="flex items-end gap-2 mb-2">
-                <div className="text-2xl font-bold text-neutral-900">{plan.price}</div>
-                {plan.cadence ? <div className="text-sm text-neutral-500">{plan.cadence}</div> : null}
+                <div className="text-2xl font-bold text-neutral-900">{formatPrice(plan)}</div>
+                {plan.monthlyPrice && <div className="text-sm text-neutral-500">{getCadence()}</div>}
               </div>
               <p className="text-sm text-neutral-600 mb-6">{plan.description}</p>
               <a

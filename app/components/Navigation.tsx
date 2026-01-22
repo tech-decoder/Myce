@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=971555710877&text=Hello%21+I+want+to+know+more+about+Myce&type=phone_number&app_absent=0";
@@ -21,7 +22,7 @@ export default function Navigation() {
         <div className="relative flex items-center justify-between h-16 rounded-full bg-white/90 backdrop-blur-myce border border-neutral-200 shadow-card px-5">
           {/* Logo - Left */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 src="/images/2.png"
                 alt="Myce"
@@ -30,7 +31,7 @@ export default function Navigation() {
                 priority
                 className="h-12 w-auto"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Navigation Links - Centered (Payble style) */}

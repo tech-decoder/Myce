@@ -44,7 +44,7 @@ export default function ProblemSolutionFramework() {
     },
   ];
 
-  const getHeaderIcon = (tone) => {
+  const getHeaderIcon = (tone: string) => {
     if (tone === "neutral") return "M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z";
     if (tone === "primary") return "M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z";
     return "M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z";
@@ -65,7 +65,7 @@ export default function ProblemSolutionFramework() {
             Single-provider payments create risk
           </h2>
           <p className="text-body-lg text-neutral-600 max-w-2xl mx-auto text-balance">
-            As your business grows, centralized payment systems expose you to fragility. Here's how Myce solves this.
+            As your business grows, centralized payment systems expose you to fragility. Here&apos;s how Myce solves this.
           </p>
         </div>
 

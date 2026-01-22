@@ -53,22 +53,33 @@ export default function ResultsSection() {
             </div>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
-            {proofPoints.map((point) => (
-              <div
-                key={point.title}
-                className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-card"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center mb-4">
-                  <svg className="w-5 h-5 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+            {proofPoints.map((point, idx) => {
+              // Different color themes for each card
+              const themes = [
+                { bg: "bg-primary-50", iconBg: "bg-primary-100", iconColor: "text-primary-600", cardBg: "bg-primary-50/30" },
+                { bg: "bg-accent-50", iconBg: "bg-accent-100", iconColor: "text-accent-600", cardBg: "bg-accent-50/30" },
+                { bg: "bg-neutral-50", iconBg: "bg-neutral-200", iconColor: "text-neutral-700", cardBg: "bg-neutral-50" },
+                { bg: "bg-primary-50", iconBg: "bg-primary-100", iconColor: "text-primary-600", cardBg: "bg-white" },
+              ];
+              const theme = themes[idx];
+
+              return (
+                <div
+                  key={point.title}
+                  className={`rounded-2xl border border-neutral-200 ${theme.cardBg} p-6 shadow-card`}
+                >
+                  <div className={`w-12 h-12 rounded-full ${theme.iconBg} flex items-center justify-center mb-4`}>
+                    <svg className={`w-5 h-5 ${theme.iconColor}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-base font-semibold text-neutral-900 mb-2">
+                    {point.title}
+                  </h3>
+                  <p className="text-sm text-neutral-600">{point.description}</p>
                 </div>
-                <h3 className="text-base font-semibold text-neutral-900 mb-2">
-                  {point.title}
-                </h3>
-                <p className="text-sm text-neutral-600">{point.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

@@ -62,7 +62,7 @@ export default function ImplementationProcess() {
           <div className="hidden lg:block absolute left-0 right-0 top-20 h-0.5 bg-gradient-to-r from-primary-200 via-primary-500 to-accent-400" />
 
           <div className="grid lg:grid-cols-3 gap-8 relative">
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <div key={step.num} className="relative">
                 {/* Step Number Badge */}
                 <div className="flex items-center justify-center mb-6">
