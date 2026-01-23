@@ -105,6 +105,19 @@ const config: Config = {
         '22': '5.5rem', // 88px
         '26': '6.5rem', // 104px
         '30': '7.5rem', // 120px
+        // Responsive section spacing
+        'section-mobile': '3rem',    // 48px
+        'section-tablet': '4rem',    // 64px
+        'section-desktop': '6rem',   // 96px
+        'section-wide': '8rem',      // 128px
+      },
+      minHeight: {
+        'touch': '44px',  // Minimum touch target (iOS)
+        'touch-lg': '48px', // Recommended touch target (Material)
+      },
+      minWidth: {
+        'touch': '44px',
+        'touch-lg': '48px',
       },
       borderRadius: {
         'myce': '8px',

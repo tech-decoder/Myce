@@ -19,20 +19,20 @@ export default function ServiceBenefits() {
   ];
 
   return (
-    <section className="py-8 border-y border-neutral-100 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="py-6 sm:py-8 border-y border-neutral-100 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {benefits.map((benefit) => (
             <div
               key={benefit.label}
-              className="flex items-center gap-3 p-4 rounded-xl border border-neutral-200 bg-neutral-50/50 hover:bg-neutral-50 transition-colors duration-myce"
+              className="flex items-center gap-3 p-4 sm:p-5 rounded-xl border border-neutral-200 bg-neutral-50/50 hover:bg-neutral-50 active:bg-neutral-100 transition-colors duration-myce min-h-touch-lg"
             >
-              <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-50 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
                 </svg>
               </div>
-              <span className="text-sm font-medium text-neutral-700">{benefit.label}</span>
+              <span className="text-sm sm:text-base font-medium text-neutral-700">{benefit.label}</span>
             </div>
           ))}
         </div>

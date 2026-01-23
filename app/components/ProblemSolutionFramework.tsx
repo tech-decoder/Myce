@@ -52,76 +52,87 @@ export default function ProblemSolutionFramework() {
 
   return (
     <section className="section-spacing bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-4">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-3 sm:mb-4">
             <span className="w-2 h-2 rounded-full bg-primary-500" />
-            <span className="text-xs font-medium text-neutral-700 tracking-wide uppercase">
+            <span className="text-[10px] sm:text-xs font-medium text-neutral-700 tracking-wide uppercase">
               Revenue Challenges
             </span>
           </div>
-          <h2 className="text-h2-sm lg:text-h2 text-neutral-900 mb-4 text-balance">
+          <h2 className="text-2xl sm:text-h2-sm lg:text-h2 text-neutral-900 mb-3 sm:mb-4 text-balance px-4">
             Single-provider payments create risk
           </h2>
-          <p className="text-body-lg text-neutral-600 max-w-2xl mx-auto text-balance">
+          <p className="text-base sm:text-lg lg:text-body-lg text-neutral-600 max-w-2xl mx-auto text-balance px-4">
             As your business grows, centralized payment systems expose you to fragility. Here&apos;s how Myce solves this.
           </p>
         </div>
 
-        {/* 3-Column Framework */}
-        <div className="grid lg:grid-cols-3 gap-6">
+        {/* 3-Column Framework - Mobile-first */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {[
             { title: "Problems", items: problems, tone: "neutral", metric: "Declines increase at scale" },
             { title: "Myce Handles", items: handles, tone: "primary", metric: "Routing adapts in real time" },
             { title: "Solutions", items: solutions, tone: "accent", metric: "Approvals stay resilient" },
-          ].map((group) => (
-            <div key={group.title} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-card">
-              <div className="flex items-center gap-3 mb-5">
-                <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                    group.tone === "primary"
-                      ? "bg-primary-50 text-primary-500"
-                      : group.tone === "accent"
-                        ? "bg-accent-50 text-accent-500"
-                        : "bg-primary-50 text-primary-500"
-                  }`}
-                >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={getHeaderIcon(group.tone)} />
+          ].map((group, index) => (
+            <div key={group.title}>
+              <div className="rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6 shadow-card hover:shadow-card-hover transition-shadow duration-myce">
+                <div className="flex items-center gap-3 mb-4 sm:mb-5">
+                  <div
+                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
+                      group.tone === "primary"
+                        ? "bg-primary-50 text-primary-500"
+                        : group.tone === "accent"
+                          ? "bg-accent-50 text-accent-500"
+                          : "bg-primary-50 text-primary-500"
+                    }`}
+                  >
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={getHeaderIcon(group.tone)} />
+                    </svg>
+                  </div>
+                  <h3 className="text-base sm:text-lg font-semibold text-neutral-900">{group.title}</h3>
+                </div>
+                <div className="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-50 border border-neutral-200 text-xs text-neutral-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
+                  <span className="text-xs sm:text-sm">{group.metric}</span>
+                </div>
+                <div className="space-y-3">
+                  {group.items.map((item) => (
+                    <div key={item.text} className="flex items-start gap-2.5 sm:gap-3">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary-50 flex items-center justify-center mt-0.5 flex-shrink-0">
+                        <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                        </svg>
+                      </div>
+                      <p className="text-sm sm:text-base text-neutral-700">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile: Vertical arrow separator (not on last item on mobile, hide on md+) */}
+              {index < 2 && (
+                <div className="flex justify-center py-4 md:hidden">
+                  <svg className="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
                 </div>
-                <h3 className="text-base font-semibold text-neutral-900">{group.title}</h3>
-              </div>
-              <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-50 border border-neutral-200 text-xs text-neutral-600">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
-                {group.metric}
-              </div>
-              <div className="space-y-3">
-                {group.items.map((item) => (
-                  <div key={item.text} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary-50 flex items-center justify-center mt-0.5 flex-shrink-0">
-                      <svg className="w-3.5 h-3.5 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-                      </svg>
-                    </div>
-                    <p className="text-sm text-neutral-700">{item.text}</p>
-                  </div>
-                ))}
-              </div>
+              )}
             </div>
           ))}
         </div>
 
-        {/* Arrow indicators (desktop only) */}
-        <div className="hidden lg:flex items-center justify-center space-x-12 mt-12">
-          <div className="flex items-center space-x-3">
-            <div className="text-neutral-600 font-semibold text-sm">Fragile</div>
-            <svg className="w-16 h-6 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 64 24">
+        {/* Arrow indicators */}
+        <div className="flex items-center justify-center gap-3 sm:gap-6 lg:gap-12 mt-8 sm:mt-10 lg:mt-12">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="text-neutral-600 font-semibold text-xs sm:text-sm">Fragile</div>
+            <svg className="w-12 h-5 sm:w-16 sm:h-6 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 64 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 12h60m-6-6l6 6-6 6" />
             </svg>
           </div>
-          <div className="text-accent-500 font-semibold text-sm">Resilient</div>
+          <div className="text-accent-500 font-semibold text-xs sm:text-sm">Resilient</div>
         </div>
       </div>
     </section>

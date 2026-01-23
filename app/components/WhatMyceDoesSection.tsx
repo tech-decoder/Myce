@@ -119,38 +119,38 @@ export default function WhatMyceDoesSection() {
 
   return (
     <section className="section-spacing bg-neutral-50" id="platform">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-4">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-3 sm:mb-4">
               <span className="w-2 h-2 rounded-full bg-primary-500" />
-              <span className="text-xs font-medium text-neutral-700 tracking-wide uppercase">
+              <span className="text-[10px] sm:text-xs font-medium text-neutral-700 tracking-wide uppercase">
                 What We Deliver
               </span>
             </div>
-            <h2 className="text-h2-sm lg:text-h2 text-neutral-900 mb-4 text-balance">
+            <h2 className="text-2xl sm:text-h2-sm lg:text-h2 text-neutral-900 mb-3 sm:mb-4 text-balance px-4">
               Enterprise Payment Orchestration, Simplified
             </h2>
-            <p className="text-body-lg text-neutral-600 max-w-2xl mx-auto text-balance">
+            <p className="text-base sm:text-lg lg:text-body-lg text-neutral-600 max-w-2xl mx-auto text-balance px-4">
               We implement and manage a complete revenue orchestration solution—so you can focus on growth, not payment complexity.
             </p>
           </div>
 
-          {/* Bento Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Bento Grid - Mobile-first */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
             {capabilities.map((capability, index) => (
               <div
                 key={index}
-                className={`${capability.span} ${
+                className={`${capability.featured ? 'lg:col-span-2' : 'lg:col-span-1'} ${
                   capability.featured
-                    ? "bg-primary-500 text-white p-10"
-                    : "bg-white border border-neutral-200 p-8"
+                    ? "bg-primary-500 text-white p-6 sm:p-8 lg:p-10"
+                    : "bg-white border border-neutral-200 p-5 sm:p-6 lg:p-8"
                 } rounded-2xl hover:shadow-myce-md transition-all duration-myce group`}
               >
                 {/* Icon */}
                 <div
-                  className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6 ${
+                  className={`inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl mb-5 sm:mb-6 ${
                     capability.featured
                       ? "bg-white/20 text-white"
                       : "bg-primary-50 text-primary-500 group-hover:bg-primary-500 group-hover:text-white"
@@ -161,14 +161,14 @@ export default function WhatMyceDoesSection() {
 
                 {/* Content */}
                 <h3
-                  className={`text-xl lg:text-2xl font-bold mb-4 ${
+                  className={`text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 ${
                     capability.featured ? "text-white" : "text-neutral-900"
                   }`}
                 >
                   {capability.title}
                 </h3>
                 <p
-                  className={`text-base lg:text-lg leading-relaxed ${
+                  className={`text-sm sm:text-base lg:text-lg leading-relaxed ${
                     capability.featured ? "text-white/90" : "text-neutral-600"
                   }`}
                 >
