@@ -21,15 +21,15 @@ const proofBlocks = [
 
 export default function CustomerLogoCarousel() {
   return (
-    <section className="py-16 border-y border-neutral-100 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <p className="text-sm text-neutral-600 font-medium">
+    <section className="py-10 sm:py-12 lg:py-16 border-y border-neutral-100 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <p className="text-sm sm:text-base text-neutral-600 font-medium">
             Proof layers built into the platform
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {proofBlocks.map((block, idx) => {
             // Different color themes for each card
             const themes = [
@@ -42,28 +42,28 @@ export default function CustomerLogoCarousel() {
             return (
               <div
                 key={block.title}
-                className={`rounded-2xl border border-neutral-200 ${theme.bg} p-6 shadow-card hover:shadow-card-hover transition-all duration-myce`}
+                className={`rounded-xl sm:rounded-2xl border border-neutral-200 ${theme.bg} p-5 sm:p-6 lg:p-8 shadow-card hover:shadow-card-hover transition-all duration-myce`}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-full ${theme.iconBg} flex items-center justify-center`}>
-                    <svg className={`w-5 h-5 ${theme.iconColor}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <div className="flex items-center justify-between mb-4 sm:mb-5">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-12 lg:h-12 rounded-full ${theme.iconBg} flex items-center justify-center flex-shrink-0`}>
+                    <svg className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-5 lg:h-5 ${theme.iconColor}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={block.icon} />
                     </svg>
                   </div>
-                  <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                  <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-neutral-500">
                     Proof
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-900 mb-2 sm:mb-3">
                   {block.title}
                 </h3>
-                <p className="text-sm text-neutral-600 mb-5">{block.description}</p>
-                <div className="rounded-xl border border-neutral-200 bg-white/70 p-4">
-                  <div className="flex items-center justify-between text-xs text-neutral-500 mb-3">
+                <p className="text-sm sm:text-base text-neutral-600 mb-4 sm:mb-5 leading-relaxed">{block.description}</p>
+                <div className="rounded-lg sm:rounded-xl border border-neutral-200 bg-white/70 p-4 sm:p-5">
+                  <div className="flex items-center justify-between text-xs sm:text-sm text-neutral-500 mb-3">
                     <span>Signal</span>
                     <span>Live</span>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-2 sm:space-y-2.5">
                     <div className="h-2 rounded-full bg-white">
                       <div className={`h-2 rounded-full ${theme.barColor}`} style={{ width: "78%" }} />
                     </div>
@@ -74,7 +74,7 @@ export default function CustomerLogoCarousel() {
                       <div className="h-2 rounded-full bg-neutral-400" style={{ width: "68%" }} />
                     </div>
                   </div>
-                  <p className="text-xs text-neutral-500 mt-3">{block.meta}</p>
+                  <p className="text-xs sm:text-sm text-neutral-500 mt-3">{block.meta}</p>
                 </div>
               </div>
             );

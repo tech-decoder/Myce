@@ -17,7 +17,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Navigation />
-      <Hero />
+      <div id="main-content">
+        <Hero />
       <ServiceBenefits />
       <CustomerLogoCarousel />
       <ProblemSection />
@@ -29,6 +30,7 @@ export default function Home() {
       <PricingSection />
       <FAQSection />
       <FinalCTA />
+      </div>
       <Footer />
     </main>
   );

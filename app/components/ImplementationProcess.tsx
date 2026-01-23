@@ -39,60 +39,72 @@ const steps = [
 export default function ImplementationProcess() {
   return (
     <section className="section-spacing bg-white" id="how-it-works">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-6">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-1.5 rounded-full bg-white border border-neutral-200 shadow-card mb-4 sm:mb-5 lg:mb-6">
             <span className="w-2 h-2 rounded-full bg-primary-500" />
-            <span className="text-xs font-medium text-neutral-700 tracking-wide uppercase">
+            <span className="text-[10px] sm:text-xs font-medium text-neutral-700 tracking-wide uppercase">
               Implementation Process
             </span>
           </div>
-          <h2 className="text-h2-sm lg:text-h2 text-neutral-900 mb-4 text-balance">
+          <h2 className="text-2xl sm:text-h2-sm lg:text-h2 text-neutral-900 mb-3 sm:mb-4 text-balance px-4">
             Live in 2 Weeks, Not 6 Months
           </h2>
-          <p className="text-body-lg text-neutral-600 max-w-2xl mx-auto text-balance">
+          <p className="text-base sm:text-lg lg:text-body-lg text-neutral-600 max-w-2xl mx-auto text-balance px-4">
             Our white-glove onboarding gets you from first call to production faster than building in-house—with enterprise-grade results.
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          {/* Connecting Line (desktop) */}
-          <div className="hidden lg:block absolute left-0 right-0 top-20 h-0.5 bg-gradient-to-r from-primary-200 via-primary-500 to-accent-400" />
+          {/* Connecting Line - Horizontal on desktop */}
+          <div className="hidden lg:block absolute left-0 right-0 top-16 lg:top-20 h-0.5 bg-gradient-to-r from-primary-200 via-primary-500 to-accent-400" />
 
-          <div className="grid lg:grid-cols-3 gap-8 relative">
-            {steps.map((step) => (
+          {/* Connecting Line - Vertical on mobile */}
+          <div className="lg:hidden absolute left-8 sm:left-10 top-10 bottom-10 w-0.5 bg-gradient-to-b from-primary-200 via-primary-500 to-accent-400" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-8 relative">
+            {steps.map((step, index) => (
               <div key={step.num} className="relative">
-                {/* Step Number Badge */}
-                <div className="flex items-center justify-center mb-6">
-                  <div className="relative z-10 w-20 h-20 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-myce">
-                    <span className="text-2xl font-bold text-white">{step.num}</span>
+                {/* Step Number Badge - Responsive sizing */}
+                <div className="flex items-start lg:items-center lg:justify-center mb-5 sm:mb-6">
+                  <div className="relative z-10 w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-myce flex-shrink-0">
+                    <span className="text-xl sm:text-2xl font-bold text-white">{step.num}</span>
+                  </div>
+                  {/* Mobile: Show duration next to badge */}
+                  <div className="lg:hidden ml-4 flex items-center">
+                    <div className="inline-flex items-center px-3 py-1.5 sm:py-2 rounded-full bg-primary-50 border border-primary-100">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-xs sm:text-sm font-semibold text-primary-700">{step.duration}</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Step Card */}
-                <div className="bg-white border border-neutral-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-myce">
-                  {/* Duration Badge */}
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 border border-primary-100 mb-4">
+                {/* Step Card - Responsive padding */}
+                <div className="bg-white border border-neutral-200 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 shadow-card hover:shadow-card-hover transition-all duration-myce ml-0 lg:ml-0">
+                  {/* Duration Badge - Desktop only (mobile shows next to badge) */}
+                  <div className="hidden lg:inline-flex items-center px-3 py-1 rounded-full bg-primary-50 border border-primary-100 mb-4">
                     <svg className="w-3 h-3 text-primary-600 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="text-xs font-semibold text-primary-700">{step.duration}</span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-neutral-900 mb-3">{step.title}</h3>
-                  <p className="text-sm text-neutral-600 mb-4 leading-relaxed">{step.description}</p>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900 mb-3 sm:mb-4">{step.title}</h3>
+                  <p className="text-sm sm:text-base text-neutral-600 mb-4 sm:mb-5 leading-relaxed">{step.description}</p>
 
-                  {/* Deliverables */}
-                  <div className="pt-4 border-t border-neutral-100">
-                    <div className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3">
+                  {/* Deliverables - Touch-friendly on mobile */}
+                  <div className="pt-4 sm:pt-5 border-t border-neutral-100">
+                    <div className="text-[10px] sm:text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3">
                       Deliverables
                     </div>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2.5 sm:space-y-3">
                       {step.deliverables.map((item, idx) => (
-                        <li key={idx} className="flex items-start text-xs text-neutral-700">
-                          <svg className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li key={idx} className="flex items-start text-xs sm:text-sm text-neutral-700">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary-500 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                           </svg>
                           {item.text}
@@ -101,24 +113,33 @@ export default function ImplementationProcess() {
                     </ul>
                   </div>
                 </div>
+
+                {/* Mobile: Vertical connector (down arrow) between steps */}
+                {index < steps.length - 1 && (
+                  <div className="lg:hidden flex justify-center my-6">
+                    <svg className="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col items-center gap-4">
-            <p className="text-sm text-neutral-600">Ready to get started?</p>
+        {/* CTA - Mobile-optimized */}
+        <div className="mt-12 sm:mt-14 lg:mt-16 text-center">
+          <div className="flex flex-col items-center gap-4 sm:gap-5">
+            <p className="text-sm sm:text-base text-neutral-600">Ready to get started?</p>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-primary-500 text-white text-base font-semibold rounded-full hover:bg-primary-600 transition-all duration-myce shadow-myce hover:shadow-myce-md hover:scale-105"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-3.5 bg-primary-500 text-white text-sm sm:text-base font-semibold rounded-full hover:bg-primary-600 active:bg-primary-700 transition-all duration-myce shadow-myce hover:shadow-myce-md sm:hover:scale-105 min-h-touch-lg"
             >
               Schedule Discovery Call
             </a>
-            <p className="text-xs text-neutral-500">No commitment required • 30-minute consultation</p>
+            <p className="text-xs sm:text-sm text-neutral-500">No commitment required • 30-minute consultation</p>
           </div>
         </div>
       </div>

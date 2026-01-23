@@ -44,18 +44,19 @@ export default function HowItWorksSection() {
 
   return (
     <section className="section-spacing bg-white" id="how-it-works">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-h2-sm lg:text-h2 text-neutral-900 mb-4 text-balance">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-h2-sm lg:text-h2 text-neutral-900 mb-3 sm:mb-4 text-balance px-4">
               How it works
             </h2>
-            <p className="text-body-lg text-neutral-600 text-balance">
+            <p className="text-base sm:text-lg lg:text-body-lg text-neutral-600 text-balance px-4">
               A coordinated flow that turns fragile payments into a resilient revenue engine.
             </p>
           </div>
 
           <div className="relative">
+            {/* Decorative curved path - Desktop only */}
             <svg
               className="hidden lg:block absolute left-0 right-0 top-16 h-32 w-full"
               viewBox="0 0 1000 180"
@@ -70,24 +71,38 @@ export default function HowItWorksSection() {
               />
             </svg>
 
-            <div className="grid gap-6 lg:grid-cols-4">
-              {steps.map((step) => (
-                <div key={step.number} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-card relative">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-primary-500 text-white flex items-center justify-center">
-                      {step.icon}
+            {/* Vertical connecting line - Mobile only */}
+            <div className="lg:hidden absolute left-8 sm:left-10 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary-200 via-primary-500 to-primary-300 opacity-60" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+              {steps.map((step, index) => (
+                <div key={step.number} className="relative">
+                  <div className="rounded-xl sm:rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6 lg:p-8 shadow-card hover:shadow-card-hover transition-all duration-myce">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+                      <div className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 lg:w-12 lg:h-12 rounded-full bg-primary-500 text-white flex items-center justify-center flex-shrink-0 shadow-myce">
+                        {step.icon}
+                      </div>
+                      <div className="text-xs sm:text-sm font-semibold text-neutral-500">{step.number}</div>
                     </div>
-                    <div className="text-sm font-semibold text-neutral-500">{step.number}</div>
+                    <h3 className="text-base sm:text-lg lg:text-base font-semibold text-neutral-900 mb-2 sm:mb-3">{step.title}</h3>
+                    <p className="text-sm sm:text-base lg:text-sm text-neutral-600 leading-relaxed">{step.description}</p>
                   </div>
-                  <h3 className="text-base font-semibold text-neutral-900 mb-2">{step.title}</h3>
-                  <p className="text-sm text-neutral-600">{step.description}</p>
+
+                  {/* Mobile: Down arrow between steps */}
+                  {index < steps.length - 1 && (
+                    <div className="md:hidden flex justify-center my-4">
+                      <svg className="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="mt-10 rounded-2xl border border-primary-100 bg-primary-50 p-6 text-center">
-            <p className="text-base font-semibold text-neutral-900">
+          <div className="mt-8 sm:mt-10 lg:mt-12 rounded-xl sm:rounded-2xl border border-primary-100 bg-primary-50 p-5 sm:p-6 lg:p-8 text-center">
+            <p className="text-sm sm:text-base lg:text-lg font-semibold text-neutral-900">
               Result: more approved sales, fewer surprises, predictable growth.
             </p>
           </div>

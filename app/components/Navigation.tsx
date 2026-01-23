@@ -17,8 +17,17 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-2 sm:top-4 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <>
+      {/* Skip link for keyboard navigation */}
+      <a
+        href="#main-content"
+        className="sr-only sr-only-focusable fixed top-4 left-4 z-[100] bg-primary-500 text-white px-4 py-2 rounded-lg focus:not-sr-only"
+      >
+        Skip to main content
+      </a>
+
+      <nav className="fixed top-2 sm:top-4 left-0 right-0 z-50">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-14 sm:h-16 rounded-full bg-white/90 backdrop-blur-myce border border-neutral-200 shadow-card px-4 sm:px-5">
           {/* Logo - Left */}
           <div className="flex-shrink-0">
@@ -120,6 +129,7 @@ export default function Navigation() {
           </div>
         </div>
       ) : null}
-    </nav>
+      </nav>
+    </>
   );
 }
