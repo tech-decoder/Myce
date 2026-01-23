@@ -225,23 +225,23 @@ function ArchitectureDiagramInline() {
             </div>
           </div>
 
-          {/* Alternative Arrows with Offset Entry Points - Smooth rounded design */}
+          {/* Alternative Arrows with Offset Entry Points */}
           <svg className="flex-shrink-0" width="70" height="180" viewBox="0 0 70 180" fill="none">
             <defs>
-              {/* Smooth rounded arrowhead for top path (neutral color) */}
-              <marker id="arrowhead-top" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-                <path d="M2 2 L10 6 L2 10" stroke="#737373" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              {/* Arrowhead for top path (neutral color) */}
+              <marker id="arrowhead-top" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto">
+                <polygon points="0 0, 9 3, 0 6" fill="#737373" />
               </marker>
-              {/* Smooth rounded arrowhead for bottom path (primary color) */}
-              <marker id="arrowhead-bottom" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-                <path d="M2 2 L10 6 L2 10" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              {/* Arrowhead for bottom path (primary color) */}
+              <marker id="arrowhead-bottom" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto">
+                <polygon points="0 0, 9 3, 0 6" fill="#6366f1" />
               </marker>
             </defs>
             {/* Path 1: Your Checkout → Myce Orchestration (top 1/3 entry) */}
             <path
-              d="M 0 42 L 35 42 L 35 60 L 62 60"
+              d="M 0 42 L 35 42 L 35 60 L 70 60"
               stroke="#737373"
-              strokeWidth="2.5"
+              strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
               fill="none"
@@ -249,9 +249,9 @@ function ArchitectureDiagramInline() {
             />
             {/* Path 2: Myce Checkout → Myce Orchestration (bottom 1/3 entry) */}
             <path
-              d="M 0 138 L 35 138 L 35 120 L 62 120"
+              d="M 0 138 L 35 138 L 35 120 L 70 120"
               stroke="#6366f1"
-              strokeWidth="2.5"
+              strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
               fill="none"
@@ -291,9 +291,9 @@ function ArchitectureDiagramInline() {
             </div>
           </div>
 
-          {/* Arrow Right - Smooth rounded design */}
+          {/* Arrow Right */}
           <svg className="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 12h16m0 0l-5-5m5 5l-5 5" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
 
           {/* Right: Multiple Processors */}
