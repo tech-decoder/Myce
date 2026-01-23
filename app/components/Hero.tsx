@@ -113,16 +113,32 @@ function ArchitectureDiagramInline() {
           </div>
 
           {/* Stepped Arrows */}
-          <svg className="flex-shrink-0" width="60" height="140" viewBox="0 0 60 140" fill="none">
+          <svg className="flex-shrink-0" width="70" height="180" viewBox="0 0 70 180" fill="none">
             <defs>
-              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                <polygon points="0 0, 10 3, 0 6" fill="#818cf8" />
+              <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
+                <polygon points="0 0, 12 4, 0 8" fill="#6366f1" />
               </marker>
             </defs>
             {/* Arrow from top card - stepped path */}
-            <path d="M 0 35 L 20 35 L 20 55 L 60 55 L 60 70" stroke="#818cf8" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead)" />
+            <path
+              d="M 0 42 L 28 42 L 28 88 L 70 88"
+              stroke="#6366f1"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+              markerEnd="url(#arrowhead)"
+            />
             {/* Arrow from bottom card - stepped path */}
-            <path d="M 0 105 L 20 105 L 20 85 L 60 85 L 60 70" stroke="#818cf8" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead)" />
+            <path
+              d="M 0 138 L 28 138 L 28 88 L 70 88"
+              stroke="#6366f1"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+              markerEnd="url(#arrowhead)"
+            />
           </svg>
 
           {/* Middle: Myce Layer */}
