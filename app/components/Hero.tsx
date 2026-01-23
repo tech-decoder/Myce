@@ -112,30 +112,28 @@ function ArchitectureDiagramInline() {
             </div>
           </div>
 
-          {/* Stepped Arrows */}
+          {/* Separated Alternative Arrows */}
           <svg className="flex-shrink-0" width="70" height="180" viewBox="0 0 70 180" fill="none">
             <defs>
               <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
                 <polygon points="0 0, 12 4, 0 8" fill="#6366f1" />
               </marker>
             </defs>
-            {/* Arrow from top card - stepped path */}
+            {/* Path 1: Your Checkout → Myce Orchestration (upper entry) */}
             <path
-              d="M 0 42 L 28 42 L 28 88 L 70 88"
+              d="M 0 42 L 70 55"
               stroke="#6366f1"
               strokeWidth="3"
               strokeLinecap="round"
-              strokeLinejoin="round"
               fill="none"
               markerEnd="url(#arrowhead)"
             />
-            {/* Arrow from bottom card - stepped path */}
+            {/* Path 2: Myce Checkout → Myce Orchestration (lower entry) */}
             <path
-              d="M 0 138 L 28 138 L 28 88 L 70 88"
+              d="M 0 138 L 70 125"
               stroke="#6366f1"
               strokeWidth="3"
               strokeLinecap="round"
-              strokeLinejoin="round"
               fill="none"
               markerEnd="url(#arrowhead)"
             />
