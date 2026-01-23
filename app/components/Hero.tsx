@@ -112,17 +112,17 @@ function ArchitectureDiagramInline() {
             </div>
           </div>
 
-          {/* Curved Arrows */}
+          {/* Stepped Arrows */}
           <svg className="flex-shrink-0" width="60" height="140" viewBox="0 0 60 140" fill="none">
             <defs>
               <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
                 <polygon points="0 0, 10 3, 0 6" fill="#818cf8" />
               </marker>
             </defs>
-            {/* Arrow from top card - curves outward dramatically then back in */}
-            <path d="M 0 35 C 35 35, 45 50, 60 70" stroke="#818cf8" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead)" />
-            {/* Arrow from bottom card - curves outward dramatically then back in */}
-            <path d="M 0 105 C 35 105, 45 90, 60 70" stroke="#818cf8" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead)" />
+            {/* Arrow from top card - stepped path */}
+            <path d="M 0 35 L 20 35 L 20 55 L 60 55 L 60 70" stroke="#818cf8" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead)" />
+            {/* Arrow from bottom card - stepped path */}
+            <path d="M 0 105 L 20 105 L 20 85 L 60 85 L 60 70" stroke="#818cf8" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead)" />
           </svg>
 
           {/* Middle: Myce Layer */}
