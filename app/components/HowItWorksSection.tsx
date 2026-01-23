@@ -88,11 +88,11 @@ export default function HowItWorksSection() {
                     <p className="text-sm sm:text-base lg:text-sm text-neutral-600 leading-relaxed">{step.description}</p>
                   </div>
 
-                  {/* Mobile: Down arrow between steps */}
+                  {/* Mobile: Down arrow between steps - Smooth rounded design */}
                   {index < steps.length - 1 && (
                     <div className="md:hidden flex justify-center my-4">
                       <svg className="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m0 0l-4-4m4 4l4-4" />
                       </svg>
                     </div>
                   )}

@@ -52,10 +52,10 @@ export default function ShiftSection() {
                   <div className="text-white/50 text-sm mt-2">Binary: Approve or Block</div>
                 </div>
 
-                {/* Arrow */}
+                {/* Arrow - Smooth rounded design */}
                 <div className="flex justify-center">
                   <svg className="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m0 0l-4-4m4 4l4-4" />
                   </svg>
                 </div>
 

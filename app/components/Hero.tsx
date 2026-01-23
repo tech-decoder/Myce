@@ -114,9 +114,9 @@ function ArchitectureDiagramMobile() {
             </div>
           </div>
 
-          {/* Down Arrow */}
+          {/* Down Arrow - Smooth rounded design */}
           <svg className="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m0 0l-4-4m4 4l4-4" />
           </svg>
 
           {/* Myce Orchestration */}
@@ -150,9 +150,9 @@ function ArchitectureDiagramMobile() {
             </div>
           </div>
 
-          {/* Down Arrow */}
+          {/* Down Arrow - Smooth rounded design */}
           <svg className="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m0 0l-4-4m4 4l4-4" />
           </svg>
 
           {/* Processors */}

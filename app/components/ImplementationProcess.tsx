@@ -114,11 +114,11 @@ export default function ImplementationProcess() {
                   </div>
                 </div>
 
-                {/* Mobile: Vertical connector (down arrow) between steps */}
+                {/* Mobile: Vertical connector (down arrow) between steps - Smooth rounded design */}
                 {index < steps.length - 1 && (
                   <div className="lg:hidden flex justify-center my-6">
                     <svg className="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m0 0l-4-4m4 4l4-4" />
                     </svg>
                   </div>
                 )}
