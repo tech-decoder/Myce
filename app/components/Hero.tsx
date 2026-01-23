@@ -91,7 +91,7 @@ function ArchitectureDiagramInline() {
 
             {/* Or Divider */}
             <div className="text-center py-1">
-              <span className="text-xs font-semibold text-primary-600">Or</span>
+              <span className="text-xs font-semibold text-primary-600">OR</span>
             </div>
 
             {/* Myce Checkout */}
@@ -113,16 +113,16 @@ function ArchitectureDiagramInline() {
           </div>
 
           {/* Curved Arrows */}
-          <svg className="flex-shrink-0" width="36" height="140" viewBox="0 0 36 140" fill="none">
+          <svg className="flex-shrink-0" width="48" height="140" viewBox="0 0 48 140" fill="none">
             <defs>
               <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
                 <polygon points="0 0, 10 3, 0 6" fill="#818cf8" />
               </marker>
             </defs>
-            {/* Arrow from top card */}
-            <path d="M 0 35 Q 18 35, 36 70" stroke="#818cf8" strokeWidth="2.5" markerEnd="url(#arrowhead)" />
-            {/* Arrow from bottom card */}
-            <path d="M 0 105 Q 18 105, 36 70" stroke="#818cf8" strokeWidth="2.5" markerEnd="url(#arrowhead)" />
+            {/* Arrow from top card - curves outward then inward */}
+            <path d="M 0 35 C 20 35, 30 45, 48 70" stroke="#818cf8" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead)" />
+            {/* Arrow from bottom card - curves outward then inward */}
+            <path d="M 0 105 C 20 105, 30 95, 48 70" stroke="#818cf8" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead)" />
           </svg>
 
           {/* Middle: Myce Layer */}
