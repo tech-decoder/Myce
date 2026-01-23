@@ -112,30 +112,37 @@ function ArchitectureDiagramInline() {
             </div>
           </div>
 
-          {/* Separated Alternative Arrows */}
+          {/* Alternative Arrows with Offset Entry Points */}
           <svg className="flex-shrink-0" width="70" height="180" viewBox="0 0 70 180" fill="none">
             <defs>
-              <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
+              {/* Arrowhead for top path (neutral color) */}
+              <marker id="arrowhead-top" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
+                <polygon points="0 0, 12 4, 0 8" fill="#737373" />
+              </marker>
+              {/* Arrowhead for bottom path (primary color) */}
+              <marker id="arrowhead-bottom" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
                 <polygon points="0 0, 12 4, 0 8" fill="#6366f1" />
               </marker>
             </defs>
-            {/* Path 1: Your Checkout → Myce Orchestration (upper entry) */}
+            {/* Path 1: Your Checkout → Myce Orchestration (top 1/3 entry) */}
             <path
-              d="M 0 42 L 70 55"
-              stroke="#6366f1"
+              d="M 0 42 L 35 42 L 35 60 L 70 60"
+              stroke="#737373"
               strokeWidth="3"
               strokeLinecap="round"
+              strokeLinejoin="round"
               fill="none"
-              markerEnd="url(#arrowhead)"
+              markerEnd="url(#arrowhead-top)"
             />
-            {/* Path 2: Myce Checkout → Myce Orchestration (lower entry) */}
+            {/* Path 2: Myce Checkout → Myce Orchestration (bottom 1/3 entry) */}
             <path
-              d="M 0 138 L 70 125"
+              d="M 0 138 L 35 138 L 35 120 L 70 120"
               stroke="#6366f1"
               strokeWidth="3"
               strokeLinecap="round"
+              strokeLinejoin="round"
               fill="none"
-              markerEnd="url(#arrowhead)"
+              markerEnd="url(#arrowhead-bottom)"
             />
           </svg>
 
