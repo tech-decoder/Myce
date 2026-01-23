@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function DashboardMockup() {
   return (
     <div className="relative w-full max-w-5xl mx-auto">
@@ -13,7 +15,7 @@ export default function DashboardMockup() {
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <img src="/images/2.png" alt="Myce" className="h-6 w-auto opacity-70" />
+            <Image src="/images/2.png" alt="Myce" width={90} height={28} className="h-6 w-auto opacity-70" />
             <div className="w-20 h-8 bg-neutral-200 rounded" />
             <div className="w-20 h-8 bg-primary-500 rounded" />
           </div>

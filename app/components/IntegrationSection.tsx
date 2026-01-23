@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const tools = [
   "Stripe",
   "Adyen",
@@ -47,7 +49,7 @@ export default function IntegrationSection() {
             </div>
           </div>
           <div className="absolute z-10 w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-myce border border-primary-200">
-            <img src="/images/2.png" alt="Myce" className="h-10 w-auto" />
+            <Image src="/images/2.png" alt="Myce" width={140} height={44} className="h-10 w-auto" />
           </div>
         </div>
 
