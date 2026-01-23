@@ -116,12 +116,12 @@ function ArchitectureDiagramInline() {
           <svg className="flex-shrink-0" width="70" height="180" viewBox="0 0 70 180" fill="none">
             <defs>
               {/* Arrowhead for top path (neutral color) */}
-              <marker id="arrowhead-top" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
-                <polygon points="0 0, 12 4, 0 8" fill="#737373" />
+              <marker id="arrowhead-top" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto">
+                <polygon points="0 0, 9 3, 0 6" fill="#737373" />
               </marker>
               {/* Arrowhead for bottom path (primary color) */}
-              <marker id="arrowhead-bottom" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
-                <polygon points="0 0, 12 4, 0 8" fill="#6366f1" />
+              <marker id="arrowhead-bottom" markerWidth="9" markerHeight="9" refX="8.5" refY="3" orient="auto">
+                <polygon points="0 0, 9 3, 0 6" fill="#6366f1" />
               </marker>
             </defs>
             {/* Path 1: Your Checkout → Myce Orchestration (top 1/3 entry) */}
